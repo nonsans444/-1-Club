@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { Shield, ArrowRight, Zap, Target, Users } from 'lucide-react';
-import { DiscordLoginLink } from '../components/Layout';
+import { DiscordLoginLink } from './Layout';
 import { User } from '../App';
 import { useNavigate } from 'react-router-dom';
 
@@ -96,6 +96,79 @@ export function Landing({ user }: { user: User | null }) {
                 <p className="text-gray-500 leading-relaxed font-light italic text-sm">
                   {feature.description}
                 </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Wisdom Section */}
+      <div className="py-32 bg-black border-y border-white/5">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="text-center mb-24">
+            <h2 className="text-[10px] font-black uppercase tracking-[0.5em] text-gold-accent mb-6">The Oracle</h2>
+            <p className="text-4xl sm:text-5xl font-serif italic text-white uppercase tracking-tighter">Wisdom from the Forge</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-white/5 border border-white/5 overflow-hidden">
+            {[
+              {
+                quote: "Everything in life is a mind game. Whenever we reach a limit, it's our own mind that's playing tricks on us.",
+                author: "David Goggins",
+                category: "Discipline",
+                img: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=1000&auto=format&fit=crop&grayscale=1"
+              },
+              {
+                quote: "When Allah is with you, nobody can beat you. You have to believe this with all your heart.",
+                author: "Khabib Nurmagomedov",
+                category: "Faith",
+                img: "https://images.unsplash.com/photo-1517594959196-7c9da56c527b?q=80&w=1000&auto=format&fit=crop&grayscale=1"
+              },
+              {
+                quote: "The soul becomes dyed with the color of its thoughts. Occupy your mind with nothing but the highest standard.",
+                author: "Marcus Aurelius",
+                category: "Stoicism",
+                img: "https://images.unsplash.com/photo-1549443540-ee2342f4fd71?q=80&w=1000&auto=format&fit=crop&grayscale=1"
+              },
+              {
+                quote: "Discipline equals freedom. There is no other path to the life you were meant to lead.",
+                author: "Jocko Willink",
+                category: "Leadership",
+                img: "https://images.unsplash.com/photo-1594882645126-14020914d58d?q=80&w=1000&auto=format&fit=crop&grayscale=1"
+              }
+            ].map((wisdom, i) => (
+              <motion.div
+                key={wisdom.author}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="relative h-[450px] group overflow-hidden"
+              >
+                <img 
+                  src={wisdom.img} 
+                  alt={wisdom.author}
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 opacity-40"
+                  referrerPolicy="no-referrer"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+                
+                <div className="absolute inset-0 p-12 flex flex-col justify-end">
+                  <div className="mb-6">
+                    <span className="text-[9px] font-black uppercase tracking-[0.4em] text-gold-accent bg-gold-accent/10 px-3 py-1 border border-gold-accent/20">
+                      {wisdom.category}
+                    </span>
+                  </div>
+                  <h3 className="text-2xl sm:text-3xl font-serif italic text-white mb-6 leading-tight group-hover:text-gold-accent transition-colors">
+                    "{wisdom.quote}"
+                  </h3>
+                  <div className="flex items-center gap-4">
+                    <div className="h-px w-8 bg-gold-accent/40"></div>
+                    <span className="text-[10px] font-black uppercase tracking-[0.3em] text-gray-400">
+                      {wisdom.author}
+                    </span>
+                  </div>
+                </div>
               </motion.div>
             ))}
           </div>

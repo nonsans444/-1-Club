@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { Trophy, Medal, Star, ShieldCheck, MapPin, Search, ExternalLink, Lock } from 'lucide-react';
 import { User } from '../App';
-import { DiscordLoginLink } from '../components/Layout';
+import { DiscordLoginLink } from './Layout';
 
 export function HallOfFame({ user }: { user: User | null }) {
   const leaderboard = [

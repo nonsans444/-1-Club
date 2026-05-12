@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { Library, BookOpen, Clock, FileText, Download, Play, Lock } from 'lucide-react';
 import { User } from '../App';
-import { DiscordLoginLink } from '../components/Layout';
+import { DiscordLoginLink } from './Layout';
 
 export function Forge({ user }: { user: User | null }) {
   const resources = [

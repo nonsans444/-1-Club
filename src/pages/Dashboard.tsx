@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 import { CheckCircle2, Circle, TrendingUp, Users, Radio, Calendar, Trophy, ChevronRight, Target, Library } from 'lucide-react';
 import { User } from '../App';
-import { DiscordLoginLink } from '../components/Layout';
+import { DiscordLoginLink } from './Layout';
 
 interface Stats {
   memberCount: number;

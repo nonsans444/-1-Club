@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, useLocation, useNavigate } from 'react-router-dom';
-import { Layout } from './components/Layout';
+import { Layout } from './pages/Layout';
 import { Landing } from './pages/Landing';
 import { Dashboard } from './pages/Dashboard';
 import { Forge } from './pages/Forge';
